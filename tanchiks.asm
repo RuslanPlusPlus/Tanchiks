@@ -27,7 +27,7 @@ str_back_to_menu db "Press M to exit to menu$"
 str_bonus_instruction1 db "Bonus is a B tile, can increase player lives, kill random enemy$"
 str_bonus_instruction2 db "or spawn wals around base$"
 output_pos_x db 0							;variable for convinient output
-input db (?)								;contains last inputed character
+input db 0								;contains last inputed character
 
 
 game_is_over dw 0							;bolean, present if player lives is 0, or player base is damaged
@@ -51,8 +51,8 @@ p_moving dw 0						;boolean, present if player can move for one tile
 p_pos dw 0							;position of player on screen, index in screen array
 p_direction db 0					;can be 0[up], 1[right], 2[down], or 3[left]
 p_directions db 'A', '>', 'V', '<'	;direction characters
-p_bullet_pos dw (?)					;position of player bullet
-p_bullet_dir db (?)					;direction of player bullet
+p_bullet_pos dw 0					;position of player bullet
+p_bullet_dir db 0					;direction of player bullet
 p_bullet_exist db 0					;1 - bullet is present, 0 - not gl_game_is_present
 p_base_blocks dw 0					;amount of player base blocks(tiles)
 p_base_blocks_were dw 0				;amount of player base blocks(tiles) at the start of the level
